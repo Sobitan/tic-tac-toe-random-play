@@ -435,12 +435,13 @@ if __name__ == '__main__':
     p_x.set_symbol(env.x)
     p_o.set_symbol(env.o)
 
-    T = 10000
+    T = 50000
     for t in range(T):
         if t % 200 == 0:
             print(t)
         play_game(p1, p2, Environment())
 
+    np.savetxt('test2.txt', (state_winner_triples), fmt='%5s', delimiter=',')
     # play human vs. agent
     # do you think the agent learned to play the game well?
     human = Human()
